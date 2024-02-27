@@ -1,0 +1,23 @@
+[
+  {
+    "esrs:GenderAxis": "Female",
+    "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel": 20,
+    "esrs:NumberOfEmployeesHeadCountUnder30YearsOld": 100,
+    "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld": 200,
+    "esrs:NumberOfEmployeesHeadCountOver50YearsOld": 70
+  },
+  {
+    "esrs:GenderAxis": "Male",
+    "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel": 30,
+    "esrs:NumberOfEmployeesHeadCountUnder30YearsOld": 120,
+    "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld": 180,
+    "esrs:NumberOfEmployeesHeadCountOver50YearsOld": 100
+  },
+  {
+    "esrs:GenderAxis": "Other than female and male",
+    "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel": 5,
+    "esrs:NumberOfEmployeesHeadCountUnder30YearsOld": 30,
+    "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld": 50,
+    "esrs:NumberOfEmployeesHeadCountOver50YearsOld": 20
+  }
+]

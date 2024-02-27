@@ -1,0 +1,41 @@
+{
+  "dimensions": [
+    {
+      "id": "esrs:GenderAxis",
+      "label": "Gender",
+      "members": [
+        { "id": "esrs:FemaleMember", "label": "Female" },
+        { "id": "esrs:MaleMember", "label": "Male" },
+        { "id": "esrs:OtherThanFemaleAndMaleMember", "label": "Other than female and male" },
+        { "id": "esrs:GenderNotDisclosedMember", "label": "Gender not disclosed" }
+      ]
+    }
+  ],
+  "measures": [
+    { "id": "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel", "label": "Number of employees at top management level" },
+    { "id": "esrs:PercentageOfEmployeesAtTopManagementLevel", "label": "Percentage of employees at top management level", "calculation": "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel / total * 100" },
+    { "id": "esrs:NumberOfEmployeesHeadCountUnder30YearsOld", "label": "Number of employees under 30 years old" },
+    { "id": "esrs:PercentageOfEmployeesUnder30YearsOld", "label": "Percentage of employees under 30 years old", "calculation": "esrs:NumberOfEmployeesHeadCountUnder30YearsOld / total * 100" },
+    { "id": "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld", "label": "Number of employees between 30 and 50 years old" },
+    { "id": "esrs:PercentageOfEmployeesBetween30And50YearsOld", "label": "Percentage of employees between 30 and 50 years old", "calculation": "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld / total * 100" },
+    { "id": "esrs:NumberOfEmployeesHeadCountOver50YearsOld", "label": "Number of employees over 50 years old" },
+    { "id": "esrs:PercentageOfEmployeesOver50YearsOld", "label": "Percentage of employees over 50 years old", "calculation": "esrs:NumberOfEmployeesHeadCountOver50YearsOld / total * 100" }
+  ],
+  "instructions": {
+    "createTable": {
+      "byDimension": ["esrs:GenderAxis"],
+      "byMeasure": [
+        "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel",
+        "esrs:NumberOfEmployeesHeadCountUnder30YearsOld",
+        "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld",
+        "esrs:NumberOfEmployeesHeadCountOver50YearsOld"
+      ],
+      "calculatePercentageFor": [
+        "esrs:PercentageOfEmployeesAtTopManagementLevel",
+        "esrs:PercentageOfEmployeesUnder30YearsOld",
+        "esrs:PercentageOfEmployeesBetween30And50YearsOld",
+        "esrs:PercentageOfEmployeesOver50YearsOld"
+      ]
+    }
+  }
+}
