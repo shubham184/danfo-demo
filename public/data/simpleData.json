@@ -1,0 +1,22 @@
+[
+  {
+    "esrs:GenderAxis": "Female",
+    "esrs:NumberOfEmployeesHeadcount": 120,
+    "esrs:AverageNumberOfEmployeesHeadCount": 115
+  },
+  {
+    "esrs:GenderAxis": "Male",
+    "esrs:NumberOfEmployeesHeadcount": 150,
+    "esrs:AverageNumberOfEmployeesHeadCount": 145
+  },
+  {
+    "esrs:GenderAxis": "Other",
+    "esrs:NumberOfEmployeesHeadcount": 10,
+    "esrs:AverageNumberOfEmployeesHeadCount": 10
+  },
+  {
+    "esrs:GenderAxis": "Not Disclosed",
+    "esrs:NumberOfEmployeesHeadcount": 20,
+    "esrs:AverageNumberOfEmployeesHeadCount": 20
+  }
+]

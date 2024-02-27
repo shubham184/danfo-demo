@@ -1,0 +1,43 @@
+{
+    "dataModel": {
+      "dimensions": [
+        {
+          "id": "esrs:GenderAxis",
+          "label": "Gender",
+          "members": [
+            { "id": "esrs:FemaleMember", "label": "Female" },
+            { "id": "esrs:MaleMember", "label": "Male" },
+            { "id": "esrs:OtherThanFemaleAndMaleMember", "label": "Other than female and male" },
+            { "id": "esrs:GenderNotDisclosedMember", "label": "Gender not disclosed" }
+          ]
+        }
+      ],
+      "measures": [
+        {
+          "id": "esrs:NumberOfEmployeesHeadcount",
+          "label": "Total number of employees (head count)",
+          "dataType": "integer",
+          "aggregation": "sum"
+        },
+        {
+          "id": "esrs:AverageNumberOfEmployeesHeadCount",
+          "label": "Average number of employees (head count)",
+          "dataType": "integer",
+          "aggregation": "sum"
+        }
+      ]
+    },
+    "instructions": {
+      "createTables": [
+        {
+          "byDimension": "esrs:GenderAxis",
+          "splitBy": "measure",
+          "measures": [
+            "esrs:NumberOfEmployeesHeadcount",
+            "esrs:AverageNumberOfEmployeesHeadCount"
+          ]
+        }
+      ]
+    }
+  }
+  

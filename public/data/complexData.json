@@ -1,0 +1,31 @@
+[
+    {
+      "esrs:MethodologyOfEmployeeMeasurementAxis": "Head Count",
+      "esrs:GenderAxis": "Female",
+      "esrs:TypeOfEmployeeContractAxis": "Permanent",
+      "esrs:NumberOfEmployeesHeadCountOrFulltimeEquivalent": 100,
+      "esrs:AverageNumberOfEmployeesHeadCountOrFulltimeEquivalent": 95
+    },
+    {
+      "esrs:MethodologyOfEmployeeMeasurementAxis": "Head Count",
+      "esrs:GenderAxis": "Male",
+      "esrs:TypeOfEmployeeContractAxis": "Temporary",
+      "esrs:NumberOfEmployeesHeadCountOrFulltimeEquivalent": 50,
+      "esrs:AverageNumberOfEmployeesHeadCountOrFulltimeEquivalent": 48
+    },
+    {
+      "esrs:MethodologyOfEmployeeMeasurementAxis": "Full-time Equivalent",
+      "esrs:GenderAxis": "Female",
+      "esrs:TypeOfEmployeeContractAxis": "Permanent",
+      "esrs:NumberOfEmployeesHeadCountOrFulltimeEquivalent": 80,
+      "esrs:AverageNumberOfEmployeesHeadCountOrFulltimeEquivalent": 78
+    },
+    {
+      "esrs:MethodologyOfEmployeeMeasurementAxis": "Full-time Equivalent",
+      "esrs:GenderAxis": "Male",
+      "esrs:TypeOfEmployeeContractAxis": "Temporary",
+      "esrs:NumberOfEmployeesHeadCountOrFulltimeEquivalent": 40,
+      "esrs:AverageNumberOfEmployeesHeadCountOrFulltimeEquivalent": 38
+    }
+  ]
+  

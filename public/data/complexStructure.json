@@ -1,0 +1,61 @@
+{
+    "dataModel": {
+      "dimensions": [
+        {
+          "id": "esrs:MethodologyOfEmployeeMeasurementAxis",
+          "label": "Methodology of employee measurement",
+          "members": [
+            { "id": "esrs:HeadCountMember", "label": "Head count" },
+            { "id": "esrs:FulltimeEquivalentMember", "label": "Full-time equivalent" }
+          ]
+        },
+        {
+          "id": "esrs:GenderAxis",
+          "label": "Gender",
+          "members": [
+            { "id": "esrs:FemaleMember", "label": "Female" },
+            { "id": "esrs:MaleMember", "label": "Male" },
+            { "id": "esrs:OtherThanFemaleAndMaleMember", "label": "Other than female and male" },
+            { "id": "esrs:GenderNotDisclosedMember", "label": "Gender not disclosed" }
+          ]
+        },
+        {
+          "id": "esrs:TypeOfEmployeeContractAxis",
+          "label": "Type of employee contract",
+          "members": [
+            { "id": "esrs:PermanentEmployeesMember", "label": "Permanent employees" },
+            { "id": "esrs:TemporaryEmployeesMember", "label": "Temporary employees" },
+            { "id": "esrs:NonguaranteedHoursEmployeesMember", "label": "Non-guaranteed hours employees" },
+            { "id": "esrs:FulltimeEmployeesMember", "label": "Full-time employees" },
+            { "id": "esrs:ParttimeEmployeesMember", "label": "Part-time employees" }
+          ]
+        }
+      ],
+      "measures": [
+        {
+          "id": "esrs:NumberOfEmployeesHeadCountOrFulltimeEquivalent",
+          "label": "Number of employees (head count or full-time equivalent)",
+          "dataType": "decimal"
+        },
+        {
+          "id": "esrs:AverageNumberOfEmployeesHeadCountOrFulltimeEquivalent",
+          "label": "Average number of employees (head count or full-time equivalent)",
+          "dataType": "decimal"
+        }
+      ]
+    },
+    "instructions": {
+      "createTable": {
+        "byDimension": [
+          "esrs:MethodologyOfEmployeeMeasurementAxis",
+          "esrs:GenderAxis",
+          "esrs:TypeOfEmployeeContractAxis"
+        ],
+        "byMeasure": [
+          "esrs:NumberOfEmployeesHeadCountOrFulltimeEquivalent",
+          "esrs:AverageNumberOfEmployeesHeadCountOrFulltimeEquivalent"
+        ]
+      }
+    }
+  }
+  
