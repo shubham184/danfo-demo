@@ -9,36 +9,40 @@ interface Totals {
 }
 
 const DataTable: React.FC = () => {
+  console.log('********start*******');
   useEffect(() => {
     const df = new dfd.DataFrame(complexData);
     const instructions = complexStructure.instructions.createTable;
 
     let totals: Totals = {};
     instructions.calculatePercentageFor.forEach(percentageMeasureId => {
-      const calculationBase = percentageMeasureId.replace('PercentageOfEmployees', 'NumberOfEmployeesHeadCount');
-      totals[calculationBase] = df[calculationBase].sum();
+      const measure = complexStructure.measures.find(m => m.id === percentageMeasureId);
+      if (!measure || !measure.isCalculated || !measure.baseMeasure) return;
+      
+      const baseMeasureId = measure.baseMeasure;
+      totals[baseMeasureId] = df[baseMeasureId].sum();
+      const total = totals[baseMeasureId];
+      if(measure.isCalculated && measure.dataType === 'percent') {
+        if (total > 0) {
+          df[percentageMeasureId] = df[baseMeasureId].div(total).mul(100);
+          console.log(`Calculated ${measure.label}:`);
+          console.log(df[percentageMeasureId].toString());
+          // let groupedDf = df.groupby(instructions.byDimension).agg({[baseMeasureId]: "sum"});
+          // let percentageDf = groupedDf[baseMeasureId].div(total).mul(100);
+          // groupedDf.addColumn(percentageMeasureId, percentageDf);
+          // console.log(`Table for ${percentageMeasureId}:`);
+          // console.log(groupedDf.toString());
+        }
+        else {
+          console.warn(`Total for ${baseMeasureId} is zero, cannot calculate percentage.`);
+        }
+      }
     });
 
     instructions.byMeasure.forEach(measureId => {
-      // Assume existence check is done
       let groupedDf = df.groupby(instructions.byDimension).agg({[measureId]: "sum"});
       console.log(`Table for ${measureId}:`);
       console.log(groupedDf.toString());
-    });
-
-    // Handle calculation and display of percentages
-    instructions.calculatePercentageFor.forEach(percentageMeasureId => {
-      const measure = complexStructure.measures.find(m => m.id === percentageMeasureId);
-      if (!measure || !measure.calculation) return;
-
-      const baseMeasureId = measure.calculation.split('/')[0].trim();
-      const total = totals[baseMeasureId];
-
-      // Calculate percentages
-      df[percentageMeasureId] = df[baseMeasureId].map((val: number) => (val / total) * 100);
-
-      console.log(`Calculated ${measure.label}:`);
-      console.log(df[percentageMeasureId].toString());
     });
 
   }, []);
