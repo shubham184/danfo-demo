@@ -11,6 +11,14 @@
       ]
     },
     {
+      "id": "esrs:MethodologyOfEmployeeMeasurementAxis",
+      "label": "Methodology of employee measurement",
+      "members": [
+        { "id": "esrs:HeadCountMember", "label": "Head count" },
+        { "id": "esrs:FulltimeEquivalentMember", "label": "Full-time equivalent" }
+      ]
+    },
+    {
       "id": "esrs:TypeOfEmployeeContractAxis",
       "label": "Type of employee contract",
       "members": [
@@ -19,17 +27,10 @@
         { "id": "esrs:ParttimeEmployeesMember", "label": "Part-time employees" },
         { "id": "esrs:NonguaranteedHoursEmployeesMember", "label": "Non-guaranteed hours employees" },
         { "id": "esrs:FulltimeEmployeesMember", "label": "Other than permanent, temporary, part-time and fixed-term contract employees" }
-      ]
-    },
-    {
-      "id": "esrs:CountryAxis",
-      "label": "Country",
-      "members": [
-        { "id": "Belgium", "label": "Belgium" },
-        { "id": "India", "label": "India" },
-        { "id": "Germany", "label": "Germany" }
+
       ]
     }
+
   ],
   "measures": [
     {
@@ -83,41 +84,20 @@
   ],
   
   "instructions": {
-    "createTables": [
-      {
-        "byDimension": ["esrs:GenderAxis"],
-        "byMeasure": [
-          "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel",
-          "esrs:NumberOfEmployeesHeadCountUnder30YearsOld",
-          "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld",
-          "esrs:NumberOfEmployeesHeadCountOver50YearsOld"
-        ],
-        "calculatePercentageFor": [
-          "esrs:PercentageOfEmployeesAtTopManagementLevel",
-          "esrs:PercentageOfEmployeesUnder30YearsOld",
-          "esrs:PercentageOfEmployeesBetween30And50YearsOld",
-          "esrs:PercentageOfEmployeesOver50YearsOld"
-        ]
-      },
-      {
-        "byDimension": ["esrs:GenderAxis", "esrs:TypeOfEmployeeContractAxis"],
-        "byMeasure": [
-          "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel"
-        ],
-        "calculatePercentageFor": [
-          "esrs:PercentageOfEmployeesAtTopManagementLevel"
-        ]
-      },
-      {
-        "byDimension": ["esrs:GenderAxis", "esrs:TypeOfEmployeeContractAxis", "esrs:CountryAxis"],
-        "byMeasure": [
-          "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel"
-        ],
-        "splitByDimension": "esrs:CountryAxis",
-        "calculatePercentageFor": [
-          "esrs:PercentageOfEmployeesAtTopManagementLevel"
-        ]
-      }
-    ]
+    "createTable": {
+      "byDimension": ["esrs:GenderAxis"],
+      "byMeasure": [
+        "esrs:NumberOfEmployeesHeadCountAtTopManagementLevel",
+        "esrs:NumberOfEmployeesHeadCountUnder30YearsOld",
+        "esrs:NumberOfEmployeesHeadCountBetween30And50YearsOld",
+        "esrs:NumberOfEmployeesHeadCountOver50YearsOld"
+      ],
+      "calculatePercentageFor": [
+        "esrs:PercentageOfEmployeesAtTopManagementLevel",
+        "esrs:PercentageOfEmployeesUnder30YearsOld",
+        "esrs:PercentageOfEmployeesBetween30And50YearsOld",
+        "esrs:PercentageOfEmployeesOver50YearsOld"
+      ]
+    }
   }
 }

@@ -12,7 +12,7 @@ const DataTable: React.FC = () => {
   console.log('********start*******');
   useEffect(() => {
     const df = new dfd.DataFrame(complexData);
-    const instructions = complexStructure.instructions.createTable;
+    const instructions = complexStructure.instructions.createTables;
 
     let totals: Totals = {};
     instructions.calculatePercentageFor.forEach(percentageMeasureId => {

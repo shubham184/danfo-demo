@@ -1,15 +1,27 @@
-import React from 'react';
-import DataTable from './datatable7'; // Adjust the import path as needed
+// In a file like pages/table.tsx
 
-function App() {
+import React from 'react';
+import DataTable from './datatable8';
+import DynamicTable from './dynamictable';
+import DynamicTablePage from './dynamic-table';
+
+const TablePage = () => {
+  const tableConfig = {
+    dimensions: ['name', 'country'],
+    measures: ['age'],
+  };
+
+  const data = [
+    { name: 'John Doe', country: 'USA', age: 30 },
+    { name: 'Jane Smith', country: 'UK', age: 25 },
+    // more data...
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React Data Table Example</h1>
-      </header>
+    <div>
       <DataTable />
     </div>
   );
-}
+};
 
-export default App;
+export default TablePage;
